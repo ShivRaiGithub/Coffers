@@ -1,0 +1,396 @@
+/* NFT Marketplace Styles - Golden-Purple Theme for Sell Page */
+
+/* Base Colors & Variables */
+:root {
+  --bg-primary: #000000;
+  --text-primary: #FFFFFF;
+  --text-secondary: #CCCCCC;
+  --gradient-primary: linear-gradient(135deg, #8A2BE2, #DAA520);
+  --gradient-secondary: linear-gradient(135deg, #4B0082, #9400D3);
+  --gradient-accent: linear-gradient(135deg, #9400D3, #DAA520);
+  --color-violet: #8A2BE2;
+  --color-gold: #DAA520;
+  --color-indigo: #4B0082;
+  --color-dark-violet: #9400D3;
+  --glass-effect: rgba(138, 43, 226, 0.1);
+  --glass-border: rgba(218, 165, 32, 0.3);
+}
+
+/* Full Background Coverage */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, rgba(138, 43, 226, 0.15), transparent 70%),
+              radial-gradient(circle at bottom left, rgba(218, 165, 32, 0.1), transparent 70%),
+              var(--bg-primary);
+  background-attachment: fixed;
+}
+
+/* Background Overlay */
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: 
+    linear-gradient(125deg, rgba(138, 43, 226, 0.03) 0%, rgba(0, 0, 0, 0) 40%),
+    linear-gradient(235deg, rgba(218, 165, 32, 0.03) 0%, rgba(0, 0, 0, 0) 40%);
+  opacity: 0.7;
+}
+
+/* Base Layout */
+.marketplace-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  color: var(--text-primary);
+}
+
+/* Typography */
+.page-title {
+  font-size: 2rem;
+  font-weight: bold;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+/* Message Display */
+.success-message {
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid;
+  animation: slideIn 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.success-message.success {
+  background: rgba(46, 213, 115, 0.1);
+  color: #2ED573;
+  border-color: rgba(46, 213, 115, 0.3);
+  box-shadow: 0 8px 25px rgba(46, 213, 115, 0.1);
+}
+
+.success-message.error {
+  background: rgba(255, 107, 107, 0.1);
+  color: #FF6B6B;
+  border-color: rgba(255, 107, 107, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cancel Sales Section */
+.cancel-sales-section {
+  margin-bottom: 2rem;
+  background: var(--glass-effect);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.sales-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.sale-item {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.sale-item:hover {
+  border-color: var(--color-violet);
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.2);
+}
+
+.sale-info {
+  flex: 1;
+}
+
+.sale-name {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.sale-token-id {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.sale-price {
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Status Messages */
+.status-message {
+  text-align: center;
+  padding: 2rem;
+  background: var(--glass-effect);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+  border: 1px solid var(--glass-border);
+}
+
+.status-message--loading {
+  color: var(--text-secondary);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-primary);
+  background: var(--glass-effect);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.1);
+}
+
+.empty-state-text {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+/* Wallet Prompt */
+.wallet-prompt {
+  color: var(--text-primary);
+  text-align: center;
+  padding: 2rem;
+  background: var(--glass-effect);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.2);
+}
+
+/* Form Styles */
+.form-container {
+  background: var(--glass-effect);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.1);
+}
+
+.form-section {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.5rem;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-violet);
+  box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.price-input {
+  max-width: 300px;
+}
+
+.price-input-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* NFT Grid */
+.nft-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.nft-item {
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid var(--glass-border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nft-item:hover {
+  border-color: var(--color-violet);
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.2);
+}
+
+.nft-item.selected {
+  border-color: var(--color-gold);
+  box-shadow: 0 4px 12px rgba(218, 165, 32, 0.3);
+  background: rgba(138, 43, 226, 0.1);
+}
+
+.nft-images-container {
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--text-primary);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.8), rgba(192, 57, 43, 0.8));
+  color: white;
+  border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.9), rgba(192, 57, 43, 0.9));
+  box-shadow: 0 4px 20px rgba(231, 76, 60, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.refresh-button {
+  background: var(--gradient-secondary);
+  color: var(--text-primary);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.refresh-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3);
+}
+
+/* Remove number input arrows/spinners */
+.form-input[type="number"]::-webkit-outer-spin-button,
+.form-input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.price-input::-webkit-outer-spin-button,
+.price-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.price-input {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nft-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.75rem;
+  }
+  
+  .sales-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .marketplace-container {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,346 @@
+/* NFT with Proof Component Styles */
+.nft-with-proof {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.nft-with-proof:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+.nft-with-proof__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.nft-with-proof__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nft-with-proof__token-id {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  margin-left: 0.5rem;
+}
+
+/* Clickable image cursor */
+.nft-with-proof__image--clickable {
+  cursor: pointer;
+}
+
+.nft-with-proof__image--clickable:hover {
+  opacity: 0.8;
+  transform: scale(1.02);
+}
+
+/* Images Container */
+.nft-with-proof__images {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.nft-with-proof__image-container {
+  position: relative;
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  aspect-ratio: 1; /* Ensure square containers */
+  max-width: 200px; /* Prevent overly wide containers */
+}
+
+.nft-with-proof__image-label {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+}
+
+.nft-with-proof__image {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.nft-with-proof__image:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
+
+.nft-with-proof__image--main {
+  border: 2px solid rgba(59, 130, 246, 0.5);
+}
+
+.nft-with-proof__image--proof {
+  border: 2px solid rgba(34, 197, 94, 0.5);
+}
+
+/* Proof Badge */
+.nft-with-proof__proof-badge {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  background: rgba(34, 197, 94, 0.9);
+  border-radius: 50%;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nft-with-proof__proof-icon {
+  width: 1rem;
+  height: 1rem;
+  color: white;
+}
+
+/* Overlay for enlarged view */
+.nft-with-proof__overlay {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.nft-with-proof__overlay-content {
+  background: rgba(0, 0, 0, 0.95);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 1rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.nft-with-proof__overlay-label {
+  display: block;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.nft-with-proof__overlay-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Size Variations */
+.nft-with-proof--small {
+  padding: 0.75rem;
+}
+
+.nft-with-proof--small .nft-with-proof__title {
+  font-size: 1rem;
+}
+
+.nft-with-proof--small .nft-with-proof__images {
+  gap: 0.75rem;
+}
+
+.nft-with-proof--small .nft-with-proof__overlay-image {
+  width: 200px;
+  height: 200px;
+}
+
+.nft-with-proof--medium {
+  /* Default medium size - uses base styles defined above */
+  padding: 1rem;
+}
+
+.nft-with-proof--large {
+  padding: 1.5rem;
+}
+
+.nft-with-proof--large .nft-with-proof__title {
+  font-size: 1.25rem;
+}
+
+.nft-with-proof--large .nft-with-proof__images {
+  gap: 1.5rem;
+}
+
+.nft-with-proof--large .nft-with-proof__overlay-image {
+  width: 300px;
+  height: 300px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nft-with-proof__images {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nft-with-proof__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .nft-with-proof__token-id {
+    margin-left: 0;
+    align-self: flex-end;
+  }
+  
+  .nft-with-proof__overlay {
+    max-width: 250px;
+    max-height: 250px;
+  }
+  
+  .nft-with-proof__overlay-image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nft-with-proof {
+    padding: 0.75rem;
+  }
+  
+  .nft-with-proof__overlay {
+    max-width: 200px;
+    max-height: 200px;
+  }
+  
+  .nft-with-proof__overlay-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Animation for overlay */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.nft-with-proof__overlay-content {
+  animation: fadeInScale 0.2s ease-out;
+}
+
+/* Focus and accessibility */
+.nft-with-proof__image:focus {
+  outline: 2px solid rgba(59, 130, 246, 0.8);
+  outline-offset: 2px;
+}
+
+.nft-with-proof__image:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Enhanced styles for NFTWithProof in loan context */
+.loan-card .nft-with-proof {
+  background: rgba(138, 43, 226, 0.05);
+  border: 1px solid rgba(218, 165, 32, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.loan-card .nft-with-proof:hover {
+  background: rgba(138, 43, 226, 0.08);
+  border-color: rgba(218, 165, 32, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Make NFT images larger in loan cards specifically */
+.loan-image-container .nft-with-proof {
+  min-height: 280px;
+  max-width: 300px; /* Prevent images from getting too wide */
+}
+
+.loan-image-container .nft-with-proof__image {
+  min-height: 180px;
+  max-height: 240px;
+  border: 2px solid rgba(218, 165, 32, 0.3);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  aspect-ratio: 1; /* Ensure square aspect ratio */
+  object-fit: cover;
+}
+
+.loan-image-container .nft-with-proof__image:hover {
+  border-color: rgba(218, 165, 32, 0.6);
+  box-shadow: 0 4px 20px rgba(218, 165, 32, 0.2);
+  transform: scale(1.02);
+}
+
+/* Ensure images are never too small in any loan context */
+.loan-card .nft-with-proof__images {
+  min-height: 200px;
+  gap: 1.5rem;
+}
+
+.loan-card .nft-with-proof__image-container {
+  min-width: 160px;
+  max-width: 200px; /* Prevent overly wide containers */
+  min-height: 180px;
+  aspect-ratio: 1; /* Square containers */
+}
+
+/* Fix image overflow in browse requests */
+.nft-with-proof__image-container {
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.nft-with-proof__image {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 8px;
+}

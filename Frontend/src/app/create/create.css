@@ -1,0 +1,706 @@
+/* Create NFT View Styles - Golden-Purple Theme */
+
+/* Base Colors & Variables */
+:root {
+  --bg-primary: #000000;
+  --text-primary: #FFFFFF;
+  --text-secondary: #CCCCCC;
+  --gradient-primary: linear-gradient(135deg, #8A2BE2, #DAA520);
+  --gradient-secondary: linear-gradient(135deg, #4B0082, #9400D3);
+  --gradient-accent: linear-gradient(135deg, #9400D3, #DAA520);
+  --color-violet: #8A2BE2;
+  --color-gold: #DAA520;
+  --color-indigo: #4B0082;
+  --color-dark-violet: #9400D3;
+  --glass-effect: rgba(138, 43, 226, 0.1);
+  --glass-border: rgba(218, 165, 32, 0.3);
+}
+
+/* Full Background Coverage */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100%;
+  width: 100%;
+  /* overflow: hidden; */
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, rgba(138, 43, 226, 0.15), transparent 70%),
+              radial-gradient(circle at bottom left, rgba(218, 165, 32, 0.1), transparent 70%),
+              var(--bg-primary);
+  background-attachment: fixed;
+}
+
+.marketplace-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  color: var(--text-primary);
+}
+
+.create-nft-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.page-navigation {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Form Container */
+.form-container {
+  background: var(--glass-effect);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.2),
+              0 0 0 1px var(--glass-border);
+  padding: 2rem;
+  border: 1px solid var(--glass-border);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.form-section-header {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--glass-border);
+  padding-bottom: 1rem;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Form Fields */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.form-label--required::after {
+  content: ' *';
+  color: var(--color-gold);
+}
+
+.form-input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--text-primary);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-violet);
+  box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.2);
+}
+
+.form-input:invalid {
+  border-color: #ef4444;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.form-helper-text {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+.form-helper-text code {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0.125rem 0.25rem;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8125rem;
+  color: var(--color-gold);
+  border: 1px solid var(--glass-border);
+}
+
+.character-counter {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-align: right;
+  margin-top: 0.25rem;
+}
+
+/* Preview Section */
+.preview-container {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: var(--glass-effect);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.preview-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-accent);
+  opacity: 0.7;
+}
+
+.preview-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 1rem 0;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.preview-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.preview-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.preview-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.2);
+}
+
+/* Buttons */
+.btn-create {
+  background: var(--gradient-primary);
+  color: var(--text-primary);
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-create:hover:not(:disabled) {
+  background: var(--gradient-secondary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3);
+}
+
+.btn-create:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-mint-metadata {
+  background: var(--gradient-accent);
+  color: var(--text-primary);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-mint-metadata:hover:not(:disabled) {
+  background: linear-gradient(135deg, #7B1FA2, #B8860B);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(218, 165, 32, 0.3);
+}
+
+.btn-mint-metadata:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* File Input Styles */
+.file-input {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  color: var(--text-primary) !important;
+  cursor: pointer;
+  padding: 0.75rem !important;
+}
+
+.file-input::-webkit-file-upload-button {
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.file-input::-webkit-file-upload-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3);
+}
+
+.file-info {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0.5rem 0 0 0;
+  padding: 0.5rem;
+  background: rgba(138, 43, 226, 0.1);
+  border-radius: 6px;
+  border-left: 3px solid var(--color-gold);
+}
+
+/* Upload Button */
+.btn-upload {
+  background: var(--gradient-secondary);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.875rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  box-shadow: 0 4px 15px rgba(75, 0, 130, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-upload::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-upload:hover::before {
+  left: 100%;
+}
+
+.btn-upload:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(75, 0, 130, 0.4);
+}
+
+.btn-upload:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-upload:disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 15px rgba(75, 0, 130, 0.3);
+}
+
+/* Status Messages */
+.status-message {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+.status-message--success {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.status-message--error {
+  background-color: rgba(220, 38, 38, 0.2);
+  color: #ef4444;
+  border: 1px solid rgba(220, 38, 38, 0.4);
+}
+
+.status-message--loading {
+  background-color: rgba(138, 43, 226, 0.2);
+  color: var(--color-violet);
+  border: 1px solid rgba(138, 43, 226, 0.4);
+}
+
+.status-message--info {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.status-message p {
+  margin: 0;
+}
+
+/* Section Styles */
+.section-divider {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Recent NFT Section */
+.recent-nft-container {
+  margin-top: 2rem;
+}
+
+.recent-nft-empty {
+  text-align: center;
+  padding: 2rem;
+  background: var(--glass-effect);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.1);
+}
+
+.recent-nft-empty::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.05) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.secondary-text {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0;
+}
+
+.recent-nft-card {
+  background: var(--glass-effect);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.recent-nft-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.recent-nft-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-violet);
+}
+
+.recent-nft-card:hover::before {
+  opacity: 1;
+}
+
+.recent-nft-content {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.recent-nft-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--glass-border);
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.2);
+}
+
+.recent-nft-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.recent-nft-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 0.5rem 0;
+  word-wrap: break-word;
+}
+
+.recent-nft-description {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.recent-nft-timestamp {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+/* Background Overlay */
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: 
+    linear-gradient(125deg, rgba(138, 43, 226, 0.03) 0%, rgba(0, 0, 0, 0) 40%),
+    linear-gradient(235deg, rgba(218, 165, 32, 0.03) 0%, rgba(0, 0, 0, 0) 40%);
+  opacity: 0.7;
+}
+
+/* Star field animations */
+.star-field {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: twinkle 4s infinite;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.star:nth-child(1) { top: 5%; left: 10%; width: 1px; height: 1px; animation-delay: 0s; }
+.star:nth-child(2) { top: 15%; left: 20%; width: 2px; height: 2px; animation-delay: 0.5s; }
+.star:nth-child(3) { top: 25%; left: 35%; width: 1px; height: 1px; animation-delay: 1s; }
+.star:nth-child(4) { top: 35%; left: 50%; width: 1px; height: 1px; animation-delay: 1.5s; }
+.star:nth-child(5) { top: 45%; left: 65%; width: 2px; height: 2px; animation-delay: 2s; }
+.star:nth-child(6) { top: 55%; left: 80%; width: 1px; height: 1px; animation-delay: 2.5s; }
+.star:nth-child(7) { top: 65%; left: 95%; width: 1px; height: 1px; animation-delay: 3s; }
+.star:nth-child(8) { top: 75%; left: 5%; width: 2px; height: 2px; animation-delay: 3.5s; }
+.star:nth-child(9) { top: 85%; left: 15%; width: 1px; height: 1px; animation-delay: 4s; }
+.star:nth-child(10) { top: 95%; left: 25%; width: 1px; height: 1px; animation-delay: 4.5s; }
+.star:nth-child(11) { top: 10%; left: 85%; width: 2px; height: 2px; animation-delay: 0.2s; }
+.star:nth-child(12) { top: 20%; left: 75%; width: 1px; height: 1px; animation-delay: 0.7s; }
+.star:nth-child(13) { top: 30%; left: 65%; width: 1px; height: 1px; animation-delay: 1.2s; }
+.star:nth-child(14) { top: 40%; left: 55%; width: 2px; height: 2px; animation-delay: 1.7s; }
+.star:nth-child(15) { top: 50%; left: 45%; width: 1px; height: 1px; animation-delay: 2.2s; }
+.star:nth-child(16) { top: 60%; left: 35%; width: 1px; height: 1px; animation-delay: 2.7s; }
+.star:nth-child(17) { top: 70%; left: 25%; width: 2px; height: 2px; animation-delay: 3.2s; }
+.star:nth-child(18) { top: 80%; left: 15%; width: 1px; height: 1px; animation-delay: 3.7s; }
+.star:nth-child(19) { top: 90%; left: 5%; width: 1px; height: 1px; animation-delay: 4.2s; }
+.star:nth-child(20) { top: 15%; left: 90%; width: 2px; height: 2px; animation-delay: 0.4s; }
+
+/* Create subtle gradient overlay for additional depth */
+.bg-gradient-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.7) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.7) 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.loading-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(138, 43, 226, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Focus States for Accessibility */
+.btn-create:focus,
+.btn-mint-metadata:focus,
+.form-input:focus {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Utility Classes */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.border-gradient {
+  border: 1px solid;
+  border-image: var(--gradient-primary) 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .marketplace-container {
+    padding: 1rem;
+  }
+  
+  .form-container {
+    padding: 1.5rem;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+  }
+  
+  .preview-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .recent-nft-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .recent-nft-image {
+    width: 120px;
+    height: 120px;
+  }
+}
