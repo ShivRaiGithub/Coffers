@@ -1,5 +1,5 @@
 # Coffers : Unlock Power of Tokenized RWAs
-Coffers is a project built for Chromion: Chainlink hackathon 2025. This readme covers :
+Coffers is a project built for Chromion: Chainlink hackathon 2025.
 
 ## Links and addresses (Mainly for Hackathon)
 
