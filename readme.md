@@ -213,6 +213,15 @@ npm install
 npm run dev
 ```
 
+#### NOTE
+You will need to setup supabase and twitter api through twitter developer dashboard. 
+For twitter OAuth, you will need to provide a website url. Since we are deploying the website on localhost and twitter doesnt take localhost as a valid url, you can use ngrok in order to create a valid url for twitter.
+```
+ngrok http 3000
+```
+You need to login and authenticate ngrok.
+The above command works assuming you have authenticated ngrok and frontend is working on port 3000.
+
 ### Eliza
 1) Install the dependencies required:
 ```
