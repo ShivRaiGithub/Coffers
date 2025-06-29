@@ -1,14 +1,14 @@
 # Coffers : Unlock Power of Tokenized RWAs
 Coffers is a project built for Chromion: Chainlink hackathon 2025. This readme covers :
 
-## Links and addresses
+## Links and addresses (Mainly for Hackathon)
 
 ### Contracts
-1) Address of Main deployed on sepolia chain : 0x32116049E79985D6eF2D8819478D7939A0a38F2e
-2) Address of Asset deployed on sepolia chain : 0x1Edd34e7750E640C85944bF178C224A51438737C
-3) Address of Lending deployed on sepolia chain : 0xAE4A7Df792c089346B210f231cb89Efaf7597Af2
-4) Address of GetActivity deployed on sepolia chain : 0xB63465e2731488E2569Ff565822Fc1d93D12D37D
-5) Address of LiquidationAutomation deployed on sepolia chain : 0xf0c2E76674BdE10042441f4031Ae7BD1a724676f
+1) Address of Main.sol deployed on sepolia chain : 0x32116049E79985D6eF2D8819478D7939A0a38F2e
+2) Address of Asset.sol deployed on sepolia chain : 0x1Edd34e7750E640C85944bF178C224A51438737C
+3) Address of Lending.sol deployed on sepolia chain : 0xAE4A7Df792c089346B210f231cb89Efaf7597Af2
+4) Address of GetActivity.sol deployed on sepolia chain : 0xB63465e2731488E2569Ff565822Fc1d93D12D37D
+5) Address of LiquidationAutomation.sol deployed on sepolia chain : 0xf0c2E76674BdE10042441f4031Ae7BD1a724676f
 
 ### Video Link
 https://vimeo.com/1097193506?share=copy#t=0
@@ -16,6 +16,30 @@ https://vimeo.com/1097193506?share=copy#t=0
 For the demo, the website interaction was done through local chain while the elizaO agent interaction was done through GetActivity contract actually deployed on sepolia.
 
 Link to Post : https://x.com/ShivRai576498/status/1938954462808416707
+
+
+### Chainlink specific
+1) Address of GetActivity.sol deployed on sepolia chain : 0xB63465e2731488E2569Ff565822Fc1d93D12D37D   
+GetActivity.sol uses Chainlink functions
+![alt text](image-1.png)
+2) Address of LiquidationAutomation.sol deployed on sepolia chain : 0xf0c2E76674BdE10042441f4031Ae7BD1a724676f
+LiquidationAutomation.sol uses Chainlink Automation
+![alt text](image.png)
+3) Address of Main.sol deployed on sepolia chain : 0x32116049E79985D6eF2D8819478D7939A0a38F2e
+Main.sol uses Chainlink DataFeeds (ETH/USD)
+
+## Important Sections
+
+| Section | Description |
+|---------|-------------|
+| [Introduction](#introduction-to-coffers) | Overview of Coffers platform |
+| [RWAs](#rwas) | Real World Asset tokenization features |
+| [DeFi](#defi) | Decentralized Finance lending and borrowing |
+| [Twitter Integration](#twitter-integration) | Social media wallet connection features |
+| [Activity Points](#activity-points) | User participation verification system |
+| [ElizaOS Agent](#elizaos-agent) | AI agent integration |
+| [Contracts](#contracts) | Smart contract documentation |
+| [Running the Project](#running-the-project) | Setup and deployment instructions |
 
 ## Introduction to Coffers
 Coffers is your on-chain solution for tokenizing your assets and then using them on-chain.
@@ -204,4 +228,5 @@ npm start
 ```
 
 
-If done correctly all the commands should work correctly.
+If done correctly all the commands should work correctly.   
+Please reach out if you face any issue.
